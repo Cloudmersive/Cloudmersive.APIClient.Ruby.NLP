@@ -4,11 +4,11 @@ All URIs are relative to *https://api.cloudmersive.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**language_detection_post**](LanguageDetectionApi.md#language_detection_post) | **POST** /nlp/language/detect | Detect language of text
+[**language_detection_get_language**](LanguageDetectionApi.md#language_detection_get_language) | **POST** /nlp-v2/language/detect | Detect language of text
 
 
-# **language_detection_post**
-> LanguageDetectionResponse language_detection_post(text_to_detect)
+# **language_detection_get_language**
+> LanguageDetectionResponse language_detection_get_language(input)
 
 Detect language of text
 
@@ -28,15 +28,15 @@ end
 
 api_instance = CloudmersiveNlpApiClient::LanguageDetectionApi.new
 
-text_to_detect = "text_to_detect_example" # String | Text to detect language of
+input = CloudmersiveNlpApiClient::LanguageDetectionRequest.new # LanguageDetectionRequest | 
 
 
 begin
   #Detect language of text
-  result = api_instance.language_detection_post(text_to_detect)
+  result = api_instance.language_detection_get_language(input)
   p result
 rescue CloudmersiveNlpApiClient::ApiError => e
-  puts "Exception when calling LanguageDetectionApi->language_detection_post: #{e}"
+  puts "Exception when calling LanguageDetectionApi->language_detection_get_language: #{e}"
 end
 ```
 
@@ -44,7 +44,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **text_to_detect** | **String**| Text to detect language of | 
+ **input** | [**LanguageDetectionRequest**](LanguageDetectionRequest.md)|  | 
 
 ### Return type
 
