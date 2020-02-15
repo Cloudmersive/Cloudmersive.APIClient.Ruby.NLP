@@ -44,7 +44,7 @@ module CloudmersiveNlpApiClient
         fail ArgumentError, "Missing the required parameter 'input' when calling ParseApi.parse_parse_string"
       end
       # resource path
-      local_var_path = "/nlp/parse/tree"
+      local_var_path = "/nlp-v2/parse/tree"
 
       # query parameters
       query_params = {}
