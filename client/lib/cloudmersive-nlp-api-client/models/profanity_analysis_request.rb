@@ -13,38 +13,23 @@ Swagger Codegen version: 2.3.1
 require 'date'
 
 module CloudmersiveNlpApiClient
-  # Output of a sentiment analysis operation
-  class SentimentAnalysisResponse
-    # True if the sentiment analysis operation was successful, false otherwise
-    attr_accessor :successful
-
-    # Classification of input text into a sentiment classification; possible values are \"Positive\", \"Negative\" or \"Neutral\"
-    attr_accessor :sentiment_classification_result
-
-    # Sentiment classification score between -1.0 and +1.0 where scores less than 0 are negative sentiment, scores greater than 0 are positive sentiment and scores close to 0 are neutral.  The greater the value deviates from 0.0 the stronger the sentiment, with +1.0 and -1.0 being maximum positive and negative sentiment, respectively.
-    attr_accessor :sentiment_score_result
-
-    # Number of sentences in input text
-    attr_accessor :sentence_count
+  # Input to a profanity analysis operation
+  class ProfanityAnalysisRequest
+    # Text to analyze
+    attr_accessor :text_to_analyze
 
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'successful' => :'Successful',
-        :'sentiment_classification_result' => :'SentimentClassificationResult',
-        :'sentiment_score_result' => :'SentimentScoreResult',
-        :'sentence_count' => :'SentenceCount'
+        :'text_to_analyze' => :'TextToAnalyze'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'successful' => :'BOOLEAN',
-        :'sentiment_classification_result' => :'String',
-        :'sentiment_score_result' => :'Float',
-        :'sentence_count' => :'Integer'
+        :'text_to_analyze' => :'String'
       }
     end
 
@@ -56,20 +41,8 @@ module CloudmersiveNlpApiClient
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
 
-      if attributes.has_key?(:'Successful')
-        self.successful = attributes[:'Successful']
-      end
-
-      if attributes.has_key?(:'SentimentClassificationResult')
-        self.sentiment_classification_result = attributes[:'SentimentClassificationResult']
-      end
-
-      if attributes.has_key?(:'SentimentScoreResult')
-        self.sentiment_score_result = attributes[:'SentimentScoreResult']
-      end
-
-      if attributes.has_key?(:'SentenceCount')
-        self.sentence_count = attributes[:'SentenceCount']
+      if attributes.has_key?(:'TextToAnalyze')
+        self.text_to_analyze = attributes[:'TextToAnalyze']
       end
 
     end
@@ -92,10 +65,7 @@ module CloudmersiveNlpApiClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          successful == o.successful &&
-          sentiment_classification_result == o.sentiment_classification_result &&
-          sentiment_score_result == o.sentiment_score_result &&
-          sentence_count == o.sentence_count
+          text_to_analyze == o.text_to_analyze
     end
 
     # @see the `==` method
@@ -107,7 +77,7 @@ module CloudmersiveNlpApiClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [successful, sentiment_classification_result, sentiment_score_result, sentence_count].hash
+      [text_to_analyze].hash
     end
 
     # Builds the object from hash

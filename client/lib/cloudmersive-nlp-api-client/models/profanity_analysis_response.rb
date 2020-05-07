@@ -13,16 +13,13 @@ Swagger Codegen version: 2.3.1
 require 'date'
 
 module CloudmersiveNlpApiClient
-  # Output of a sentiment analysis operation
-  class SentimentAnalysisResponse
-    # True if the sentiment analysis operation was successful, false otherwise
+  # Output of a profanity analysis operation
+  class ProfanityAnalysisResponse
+    # True if the profanity detection operation was successful, false otherwise
     attr_accessor :successful
 
-    # Classification of input text into a sentiment classification; possible values are \"Positive\", \"Negative\" or \"Neutral\"
-    attr_accessor :sentiment_classification_result
-
-    # Sentiment classification score between -1.0 and +1.0 where scores less than 0 are negative sentiment, scores greater than 0 are positive sentiment and scores close to 0 are neutral.  The greater the value deviates from 0.0 the stronger the sentiment, with +1.0 and -1.0 being maximum positive and negative sentiment, respectively.
-    attr_accessor :sentiment_score_result
+    # Profanity classification score between 0.0 and 1.0 where scores closer to zero have a low probability of being profane or contain obscene language, while scores close to 1.0 have a high probability of being profane or containing obscene language.  Values above 0.8 have a very high probability of being profane.
+    attr_accessor :profanity_score_result
 
     # Number of sentences in input text
     attr_accessor :sentence_count
@@ -32,8 +29,7 @@ module CloudmersiveNlpApiClient
     def self.attribute_map
       {
         :'successful' => :'Successful',
-        :'sentiment_classification_result' => :'SentimentClassificationResult',
-        :'sentiment_score_result' => :'SentimentScoreResult',
+        :'profanity_score_result' => :'ProfanityScoreResult',
         :'sentence_count' => :'SentenceCount'
       }
     end
@@ -42,8 +38,7 @@ module CloudmersiveNlpApiClient
     def self.swagger_types
       {
         :'successful' => :'BOOLEAN',
-        :'sentiment_classification_result' => :'String',
-        :'sentiment_score_result' => :'Float',
+        :'profanity_score_result' => :'Float',
         :'sentence_count' => :'Integer'
       }
     end
@@ -60,12 +55,8 @@ module CloudmersiveNlpApiClient
         self.successful = attributes[:'Successful']
       end
 
-      if attributes.has_key?(:'SentimentClassificationResult')
-        self.sentiment_classification_result = attributes[:'SentimentClassificationResult']
-      end
-
-      if attributes.has_key?(:'SentimentScoreResult')
-        self.sentiment_score_result = attributes[:'SentimentScoreResult']
+      if attributes.has_key?(:'ProfanityScoreResult')
+        self.profanity_score_result = attributes[:'ProfanityScoreResult']
       end
 
       if attributes.has_key?(:'SentenceCount')
@@ -93,8 +84,7 @@ module CloudmersiveNlpApiClient
       return true if self.equal?(o)
       self.class == o.class &&
           successful == o.successful &&
-          sentiment_classification_result == o.sentiment_classification_result &&
-          sentiment_score_result == o.sentiment_score_result &&
+          profanity_score_result == o.profanity_score_result &&
           sentence_count == o.sentence_count
     end
 
@@ -107,7 +97,7 @@ module CloudmersiveNlpApiClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [successful, sentiment_classification_result, sentiment_score_result, sentence_count].hash
+      [successful, profanity_score_result, sentence_count].hash
     end
 
     # Builds the object from hash

@@ -20,6 +20,61 @@ module CloudmersiveNlpApiClient
       @api_client = api_client
     end
 
+    # Perform Profanity and Obscene Language Analysis and Detection on Text
+    # Analyze input text using advanced Profanity and Obscene Language Analysis to determine if the input contains profane language.  Supports English language input.  Consumes 1-2 API calls per sentence.
+    # @param input Input profanity analysis request
+    # @param [Hash] opts the optional parameters
+    # @return [ProfanityAnalysisResponse]
+    def analytics_profanity(input, opts = {})
+      data, _status_code, _headers = analytics_profanity_with_http_info(input, opts)
+      return data
+    end
+
+    # Perform Profanity and Obscene Language Analysis and Detection on Text
+    # Analyze input text using advanced Profanity and Obscene Language Analysis to determine if the input contains profane language.  Supports English language input.  Consumes 1-2 API calls per sentence.
+    # @param input Input profanity analysis request
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(ProfanityAnalysisResponse, Fixnum, Hash)>] ProfanityAnalysisResponse data, response status code and response headers
+    def analytics_profanity_with_http_info(input, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: AnalyticsApi.analytics_profanity ..."
+      end
+      # verify the required parameter 'input' is set
+      if @api_client.config.client_side_validation && input.nil?
+        fail ArgumentError, "Missing the required parameter 'input' when calling AnalyticsApi.analytics_profanity"
+      end
+      # resource path
+      local_var_path = "/nlp-v2/analytics/profanity"
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json', 'text/json', 'application/xml', 'text/xml'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json', 'text/json', 'application/xml', 'text/xml', 'application/x-www-form-urlencoded'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(input)
+      auth_names = ['Apikey']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'ProfanityAnalysisResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: AnalyticsApi#analytics_profanity\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Perform Sentiment Analysis and Classification on Text
     # Analyze input text using advanced Sentiment Analysis to determine if the input is positive, negative, or neutral.  Supports English language input.  Consumes 1-2 API calls per sentence.
     # @param input Input sentiment analysis request
