@@ -43,9 +43,12 @@ require 'cloudmersive-nlp-api-client/models/rephrased_sentence'
 require 'cloudmersive-nlp-api-client/models/rephrased_sentence_option'
 require 'cloudmersive-nlp-api-client/models/sentence_segmentation_request'
 require 'cloudmersive-nlp-api-client/models/sentence_segmentation_response'
+require 'cloudmersive-nlp-api-client/models/sentiment_analysis_request'
+require 'cloudmersive-nlp-api-client/models/sentiment_analysis_response'
 require 'cloudmersive-nlp-api-client/models/word_position'
 
 # APIs
+require 'cloudmersive-nlp-api-client/api/analytics_api'
 require 'cloudmersive-nlp-api-client/api/extract_entities_api'
 require 'cloudmersive-nlp-api-client/api/language_detection_api'
 require 'cloudmersive-nlp-api-client/api/language_translation_api'
