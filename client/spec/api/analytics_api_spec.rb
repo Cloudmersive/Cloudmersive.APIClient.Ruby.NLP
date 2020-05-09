@@ -56,4 +56,16 @@ describe 'AnalyticsApi' do
     end
   end
 
+  # unit tests for analytics_subjectivity
+  # Perform Subjectivity and Objectivity Analysis on Text
+  # Analyze input text using advanced Subjectivity and Objectivity Language Analysis to determine if the input text is objective or subjective, and how much.  Supports English language input.  Consumes 1-2 API calls per sentence.
+  # @param input Input subjectivity analysis request
+  # @param [Hash] opts the optional parameters
+  # @return [SubjectivityAnalysisResponse]
+  describe 'analytics_subjectivity test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
 end

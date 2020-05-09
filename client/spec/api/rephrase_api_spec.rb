@@ -32,13 +32,13 @@ describe 'RephraseApi' do
     end
   end
 
-  # unit tests for rephrase_translate_deu_to_eng
+  # unit tests for rephrase_english_rephrase_sentence_by_sentence
   # Rephrase, paraphrase English text sentence-by-sentence using Deep Learning AI
   # Automatically rephrases or paraphrases input text in English sentence by sentence using advanced Deep Learning and Neural NLP.  Creates multiple reprhasing candidates per input sentence, from 1 to 10 possible rephrasings of the original sentence.  Seeks to preserve original semantic meaning in rephrased output candidates.  Consumes 1-2 API calls per output rephrasing option generated, per sentence.
   # @param input Input rephrase request
   # @param [Hash] opts the optional parameters
   # @return [RephraseResponse]
-  describe 'rephrase_translate_deu_to_eng test' do
+  describe 'rephrase_english_rephrase_sentence_by_sentence test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end

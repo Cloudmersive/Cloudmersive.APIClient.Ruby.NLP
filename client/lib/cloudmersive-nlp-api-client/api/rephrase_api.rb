@@ -25,8 +25,8 @@ module CloudmersiveNlpApiClient
     # @param input Input rephrase request
     # @param [Hash] opts the optional parameters
     # @return [RephraseResponse]
-    def rephrase_translate_deu_to_eng(input, opts = {})
-      data, _status_code, _headers = rephrase_translate_deu_to_eng_with_http_info(input, opts)
+    def rephrase_english_rephrase_sentence_by_sentence(input, opts = {})
+      data, _status_code, _headers = rephrase_english_rephrase_sentence_by_sentence_with_http_info(input, opts)
       return data
     end
 
@@ -35,13 +35,13 @@ module CloudmersiveNlpApiClient
     # @param input Input rephrase request
     # @param [Hash] opts the optional parameters
     # @return [Array<(RephraseResponse, Fixnum, Hash)>] RephraseResponse data, response status code and response headers
-    def rephrase_translate_deu_to_eng_with_http_info(input, opts = {})
+    def rephrase_english_rephrase_sentence_by_sentence_with_http_info(input, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: RephraseApi.rephrase_translate_deu_to_eng ..."
+        @api_client.config.logger.debug "Calling API: RephraseApi.rephrase_english_rephrase_sentence_by_sentence ..."
       end
       # verify the required parameter 'input' is set
       if @api_client.config.client_side_validation && input.nil?
-        fail ArgumentError, "Missing the required parameter 'input' when calling RephraseApi.rephrase_translate_deu_to_eng"
+        fail ArgumentError, "Missing the required parameter 'input' when calling RephraseApi.rephrase_english_rephrase_sentence_by_sentence"
       end
       # resource path
       local_var_path = "/nlp-v2/rephrase/rephrase/eng/by-sentence"
@@ -70,7 +70,7 @@ module CloudmersiveNlpApiClient
         :auth_names => auth_names,
         :return_type => 'RephraseResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: RephraseApi#rephrase_translate_deu_to_eng\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: RephraseApi#rephrase_english_rephrase_sentence_by_sentence\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
