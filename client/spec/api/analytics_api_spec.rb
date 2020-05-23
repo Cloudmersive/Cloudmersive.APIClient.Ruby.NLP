@@ -56,6 +56,18 @@ describe 'AnalyticsApi' do
     end
   end
 
+  # unit tests for analytics_similarity
+  # Perform Semantic Similarity Comparison of Two Strings
+  # Analyze two input text strings, typically sentences, and determine the semantic similarity of each.  Semantic similarity refers to the degree to which two sentences mean the same thing semantically.  Uses advanced Deep Learning to perform the semantic similarity comparison.  Consumes 1-2 API calls per sentence.
+  # @param input Input similarity analysis request
+  # @param [Hash] opts the optional parameters
+  # @return [SimilarityAnalysisResponse]
+  describe 'analytics_similarity test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   # unit tests for analytics_subjectivity
   # Perform Subjectivity and Objectivity Analysis on Text
   # Analyze input text using advanced Subjectivity and Objectivity Language Analysis to determine if the input text is objective or subjective, and how much.  Supports English language input.  Consumes 1-2 API calls per sentence.
