@@ -20,6 +20,61 @@ module CloudmersiveNlpApiClient
       @api_client = api_client
     end
 
+    # Perform Hate Speech Analysis and Detection on Text
+    # Analyze input text using advanced Hate Speech Analysis to determine if the input contains hate speech language.  Supports English language input.  Consumes 1-2 API calls per sentence.
+    # @param input Input hate speech analysis request
+    # @param [Hash] opts the optional parameters
+    # @return [HateSpeechAnalysisResponse]
+    def analytics_hate_speech(input, opts = {})
+      data, _status_code, _headers = analytics_hate_speech_with_http_info(input, opts)
+      return data
+    end
+
+    # Perform Hate Speech Analysis and Detection on Text
+    # Analyze input text using advanced Hate Speech Analysis to determine if the input contains hate speech language.  Supports English language input.  Consumes 1-2 API calls per sentence.
+    # @param input Input hate speech analysis request
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(HateSpeechAnalysisResponse, Fixnum, Hash)>] HateSpeechAnalysisResponse data, response status code and response headers
+    def analytics_hate_speech_with_http_info(input, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: AnalyticsApi.analytics_hate_speech ..."
+      end
+      # verify the required parameter 'input' is set
+      if @api_client.config.client_side_validation && input.nil?
+        fail ArgumentError, "Missing the required parameter 'input' when calling AnalyticsApi.analytics_hate_speech"
+      end
+      # resource path
+      local_var_path = "/nlp-v2/analytics/hate-speech"
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json', 'text/json', 'application/xml', 'text/xml', 'application/x-www-form-urlencoded'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(input)
+      auth_names = ['Apikey']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'HateSpeechAnalysisResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: AnalyticsApi#analytics_hate_speech\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Perform Profanity and Obscene Language Analysis and Detection on Text
     # Analyze input text using advanced Profanity and Obscene Language Analysis to determine if the input contains profane language.  Supports English language input.  Consumes 1-2 API calls per sentence.
     # @param input Input profanity analysis request

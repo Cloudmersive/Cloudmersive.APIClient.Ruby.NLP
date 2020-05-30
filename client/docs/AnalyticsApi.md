@@ -4,10 +4,65 @@ All URIs are relative to *https://api.cloudmersive.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**analytics_hate_speech**](AnalyticsApi.md#analytics_hate_speech) | **POST** /nlp-v2/analytics/hate-speech | Perform Hate Speech Analysis and Detection on Text
 [**analytics_profanity**](AnalyticsApi.md#analytics_profanity) | **POST** /nlp-v2/analytics/profanity | Perform Profanity and Obscene Language Analysis and Detection on Text
 [**analytics_sentiment**](AnalyticsApi.md#analytics_sentiment) | **POST** /nlp-v2/analytics/sentiment | Perform Sentiment Analysis and Classification on Text
 [**analytics_similarity**](AnalyticsApi.md#analytics_similarity) | **POST** /nlp-v2/analytics/similarity | Perform Semantic Similarity Comparison of Two Strings
 [**analytics_subjectivity**](AnalyticsApi.md#analytics_subjectivity) | **POST** /nlp-v2/analytics/subjectivity | Perform Subjectivity and Objectivity Analysis on Text
+
+
+# **analytics_hate_speech**
+> HateSpeechAnalysisResponse analytics_hate_speech(input)
+
+Perform Hate Speech Analysis and Detection on Text
+
+Analyze input text using advanced Hate Speech Analysis to determine if the input contains hate speech language.  Supports English language input.  Consumes 1-2 API calls per sentence.
+
+### Example
+```ruby
+# load the gem
+require 'cloudmersive-nlp-api-client'
+# setup authorization
+CloudmersiveNlpApiClient.configure do |config|
+  # Configure API key authorization: Apikey
+  config.api_key['Apikey'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['Apikey'] = 'Bearer'
+end
+
+api_instance = CloudmersiveNlpApiClient::AnalyticsApi.new
+
+input = CloudmersiveNlpApiClient::HateSpeechAnalysisRequest.new # HateSpeechAnalysisRequest | Input hate speech analysis request
+
+
+begin
+  #Perform Hate Speech Analysis and Detection on Text
+  result = api_instance.analytics_hate_speech(input)
+  p result
+rescue CloudmersiveNlpApiClient::ApiError => e
+  puts "Exception when calling AnalyticsApi->analytics_hate_speech: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **input** | [**HateSpeechAnalysisRequest**](HateSpeechAnalysisRequest.md)| Input hate speech analysis request | 
+
+### Return type
+
+[**HateSpeechAnalysisResponse**](HateSpeechAnalysisResponse.md)
+
+### Authorization
+
+[Apikey](../README.md#Apikey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded
+ - **Accept**: application/json
+
 
 
 # **analytics_profanity**

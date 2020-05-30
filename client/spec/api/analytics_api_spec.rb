@@ -32,6 +32,18 @@ describe 'AnalyticsApi' do
     end
   end
 
+  # unit tests for analytics_hate_speech
+  # Perform Hate Speech Analysis and Detection on Text
+  # Analyze input text using advanced Hate Speech Analysis to determine if the input contains hate speech language.  Supports English language input.  Consumes 1-2 API calls per sentence.
+  # @param input Input hate speech analysis request
+  # @param [Hash] opts the optional parameters
+  # @return [HateSpeechAnalysisResponse]
+  describe 'analytics_hate_speech test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   # unit tests for analytics_profanity
   # Perform Profanity and Obscene Language Analysis and Detection on Text
   # Analyze input text using advanced Profanity and Obscene Language Analysis to determine if the input contains profane language.  Supports English language input.  Consumes 1-2 API calls per sentence.
