@@ -56,6 +56,18 @@ describe 'LanguageTranslationApi' do
     end
   end
 
+  # unit tests for language_translation_translate_eng_to_fra
+  # Translate English to French text with Deep Learning AI
+  # Automatically translates input text in English to output text in French using advanced Deep Learning and Neural NLP.  Consumes 1-2 API calls per input sentence.
+  # @param input Input translation request
+  # @param [Hash] opts the optional parameters
+  # @return [LanguageTranslationResponse]
+  describe 'language_translation_translate_eng_to_fra test' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   # unit tests for language_translation_translate_eng_to_rus
   # Translate English to Russian text with Deep Learning AI
   # Automatically translates input text in English to output text in Russian using advanced Deep Learning and Neural NLP.  Consumes 1-2 API calls per input sentence.
@@ -63,6 +75,18 @@ describe 'LanguageTranslationApi' do
   # @param [Hash] opts the optional parameters
   # @return [LanguageTranslationResponse]
   describe 'language_translation_translate_eng_to_rus test' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for language_translation_translate_fra_to_eng
+  # Translate French to English text with Deep Learning AI
+  # Automatically translates input text in French to output text in English using advanced Deep Learning and Neural NLP.  Consumes 1-2 API calls per input sentence.
+  # @param input Input translation request
+  # @param [Hash] opts the optional parameters
+  # @return [LanguageTranslationResponse]
+  describe 'language_translation_translate_fra_to_eng test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end

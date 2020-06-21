@@ -11,5 +11,5 @@ Swagger Codegen version: 2.4.14
 =end
 
 module CloudmersiveNlpApiClient
-  VERSION = '3.0.1'
+  VERSION = '3.0.2'
 end
