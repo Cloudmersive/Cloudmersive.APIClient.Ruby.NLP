@@ -1,1 +1,1 @@
-& gem push .\client\cloudmersive-nlp-api-client-3.0.2.gem
+& gem push .\client\cloudmersive-nlp-api-client-3.0.3.gem
